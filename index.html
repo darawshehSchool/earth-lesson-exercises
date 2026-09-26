@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>رحلة اكتشاف الحروف</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="app" id="app">
+
+  <!-- شريط التقدم العلوي -->
+  <header class="topbar" id="topbar" hidden>
+    <div class="topbar-inner">
+      <button class="icon-btn" id="btnRestartTop" title="إعادة الدرس من البداية">↺</button>
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <div class="stars-badge" id="starsBadge">⭐ 0</div>
+    </div>
+  </header>
+
+  <main class="stage" id="stage">
+
+    <!-- ======================= شاشة الترحيب ======================= -->
+    <section class="screen screen-welcome" data-screen="welcome">
+      <div class="welcome-card">
+        <div class="welcome-letters" aria-hidden="true">
+          <span class="wl wl-1">س</span>
+          <span class="wl wl-2">ش</span>
+          <span class="wl wl-3">ص</span>
+          <span class="wl wl-4">ض</span>
+        </div>
+        <h1>رحلة اكتشاف الحروف</h1>
+        <p class="subtitle">هيا بنا نلعب ونتعلّم حروفًا جديدة معًا!</p>
+        <button class="btn btn-primary btn-big" id="btnStart">لنبدأ الرحلة 🚀</button>
+      </div>
+    </section>
+
+    <!-- ======================= شاشة نظرة عامة ======================= -->
+    <section class="screen" data-screen="overview" hidden>
+      <div class="panel">
+        <h2>ماذا سنتعلّم اليوم؟</h2>
+        <p class="panel-lead">في هذه الرحلة سنكتشف أربعة تدريبات، وقبل كل تدريب سنلعب لعبة صغيرة تساعدنا على فهم الحرف.</p>
+        <ol class="overview-list">
+          <li><span class="ov-num">١</span> نصنّف كلمات فيها حرف <b class="hl-s">س</b> أو <b class="hl-sh">ش</b></li>
+          <li><span class="ov-num">٢</span> نكمل كلمات بحرف <b class="hl-ss">ص</b> أو <b class="hl-dd">ض</b></li>
+          <li><span class="ov-num">٣</span> نختار الكلمات التي فيها حرف <b class="hl-dd">ض</b></li>
+          <li><span class="ov-num">٤</span> نحلّل كلمات إلى حروفها</li>
+        </ol>
+        <button class="btn btn-primary btn-big" id="btnOverviewNext">هيا نبدأ 🌟</button>
+      </div>
+    </section>
+
+    <!-- ======================= حاوية الأنشطة الديناميكية ======================= -->
+    <section class="screen" data-screen="activity" hidden id="activityScreen">
+      <!-- يُبنى المحتوى هنا ديناميكيًا عبر script.js -->
+    </section>
+
+    <!-- ======================= الشاشة الختامية ======================= -->
+    <section class="screen" data-screen="finish" hidden>
+      <div class="panel finish-panel">
+        <div class="finish-emoji">🏆</div>
+        <h2>أحسنت! أنهيت رحلة اكتشاف الحروف</h2>
+        <div class="finish-stats" id="finishStats"></div>
+        <div class="finish-columns">
+          <div class="finish-col finish-good">
+            <h3>مهارات أتقنتها 👍</h3>
+            <ul id="finishGood"></ul>
+          </div>
+          <div class="finish-col finish-review">
+            <h3>مهارات تحتاج مراجعة 🔁</h3>
+            <ul id="finishReview"></ul>
+          </div>
+        </div>
+        <div class="finish-actions">
+          <button class="btn btn-secondary" id="btnFinishReview">مراجعة الأخطاء</button>
+          <button class="btn btn-primary" id="btnFinishRestart">إعادة الرحلة من جديد</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- قالب: بطاقة استكشاف صورة واحدة -->
+<template id="tpl-explore-card">
+  <div class="explore-card">
+    <div class="explore-emoji"></div>
+    <div class="explore-word"></div>
+  </div>
+</template>
+
+<script src="js/script.js"></script>
+</body>
+</html>
